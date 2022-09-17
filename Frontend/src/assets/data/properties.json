@@ -1,44 +1,57 @@
 [
   {
     "id": 1,
+    "SellRent": 1,
     "name": "Birla House",
     "type": "House",
-    "price": 120000
+    "price": 120000,
+    "Image": "prop1"
   },
   {
     "id": 2,
+    "SellRent": 2,
     "name": "Binod House",
     "type": "duplex",
-    "price": 1200000
+    "price": 1200000,
+    "Image": "prop2"
   },
   {
     "id": 3,
+    "SellRent": 1,
     "name": "Yash House",
     "type": "Farmhouse",
-    "price": 1800000
+    "price": 1800000,
+    "Image": "prop3"
   },
   {
     "id": 4,
+    "SellRent": 2,
     "name": "Adi House",
     "type": "Banglow",
-    "price": 1700000
+    "price": 1700000,
+    "Image": "prop4"
   },
   {
     "id": 5,
+    "SellRent": 2,
     "name": "Ram House",
     "type": "House",
-    "price": 100000
+    "price": 100000,
+    "Image": "prop5"
   },
   {
     "id": 6,
+    "SellRent": 1,
     "name": "Rahul House",
     "type": "House",
     "price": 120000
   },
   {
-    "id": 6,
+    "id": 7,
+    "SellRent": 1,
     "name": "anjali House",
     "type": "House",
-    "price": 190000
+    "price": 190000,
+    "Image": "prop7"
   }
 ]
