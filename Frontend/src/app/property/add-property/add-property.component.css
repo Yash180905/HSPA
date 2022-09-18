@@ -1,14 +1,77 @@
 .form-boundry {
-  margin: 0 5rem 0 5rem;
+  margin: 0 0 0 10rem;
 }
 .button-save {
   margin: 10px;
 }
 
-.ng-invalid .ng-touched {
+/* .ng-invalid .ng-touched {
   border-color: red;
+} */
+
+/* .error-block {
+  color: red;
+} */
+.photo-control {
+  min-height: 300px;
+  vertical-align: middle;
+  text-align: center;
+  border: 1px dashed blue;
+  margin: 5px;
+}
+/* .mr-2 {
+  margin: 0 8px 0 0;
+} */
+/* .btn-group > label[ng-reflect-btn-radio] {
+  border-radius: 44px;
+  padding: 0 15px;
+  line-height: 30px;
+} */
+
+.property-view {
+  margin: 0 10 0 0;
 }
 
-.error-block {
-  color: red;
+/* new css */
+.card {
+  min-height: 400px;
+}
+
+.card-img-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.card:hover img {
+  transform: scale(1.2, 1.2);
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+  height: 250px;
+  opacity: 0.7;
+}
+
+.card img {
+  transform: scale(1, 1);
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+  height: 250px;
+}
+
+.member-icons {
+  position: absolute;
+  bottom: -10%;
+  left: 0;
+  right: 0;
+  margin-right: auto;
+  margin-left: auto;
+  opacity: 0;
+}
+
+.card-img-wrapper:hover .member-icons {
+  bottom: 0;
+  opacity: 1;
+}
+
+.animate {
+  transition: all 0.3s ease-in-out;
 }

@@ -67,7 +67,6 @@ export class UserRegisterComponent implements OnInit {
     this.userSubmitted = true;
     if (this.registerationForm.valid) {
       // this.user = Object.assign(this.user, this.registerationForm.value);
-      localStorage.setItem('Users', JSON.stringify(this.user));
       this.userService.addUser(this.userData());
       this.registerationForm.reset();
       this.userSubmitted = false;

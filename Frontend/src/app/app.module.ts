@@ -15,6 +15,13 @@ import { UserLoginComponent } from './Users/user-login/user-login.component';
 import { UserRegisterComponent } from './Users/user-register/user-register.component';
 import { UserServiceService } from './service/user-service.service';
 import { AlertyfyService } from './service/alertyfy.service';
+import { AuthService } from './service/auth.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 const appRoutes: Routes = [
   { path: 'add-property', component: AddPropertyComponent },
@@ -43,8 +50,13 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
+    BrowserAnimationsModule,
+    BsDropdownModule.forRoot(),
+    TabsModule.forRoot(),
+    ButtonsModule.forRoot(),
+    BsDatepickerModule.forRoot(),
   ],
-  providers: [HousingService, UserServiceService, AlertyfyService],
+  providers: [HousingService, UserServiceService, AlertyfyService, AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

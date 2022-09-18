@@ -6,7 +6,7 @@ import * as alertyfy from 'alertifyjs';
 export class AlertyfyService {
   constructor() {}
   success(message: string) {
-    alertyfy.sucess(message);
+    alertyfy.success(message);
   }
   warning(message: string) {
     alertyfy.warning(message);
