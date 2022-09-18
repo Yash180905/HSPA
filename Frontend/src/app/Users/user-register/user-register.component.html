@@ -12,7 +12,7 @@
               formControlName="userName"
             />
             <span
-              *ngIf="!userName.valid && userName.touched"
+              *ngIf="!userName.valid && (userName.touched || userSubmitted)"
               class="error-block"
               >Please Provide Name</span
             >
@@ -21,7 +21,10 @@
           <div class="form-group col-12">
             <label for="email" class="form-label">Email</label>
             <input type="text" class="form-control" formControlName="email" />
-            <span class="error-block" *ngIf="!email.valid && email.touched">
+            <span
+              class="error-block"
+              *ngIf="!email.valid && (email.touched || userSubmitted)"
+            >
               <span *ngIf="email.hasError('required')">
                 Please provide Email</span
               >
@@ -40,7 +43,7 @@
             />
             <span
               class="error-block"
-              *ngIf="!password.valid && password.touched"
+              *ngIf="!password.valid && (password.touched || userSubmitted)"
             >
               <span *ngIf="password.hasError('required')">
                 Please provide password</span
@@ -60,7 +63,10 @@
             />
             <span
               class="error-block"
-              *ngIf="!confirmPassword.valid && confirmPassword.touched"
+              *ngIf="
+                !confirmPassword.valid &&
+                (confirmPassword.touched || userSubmitted)
+              "
             >
               <span *ngIf="confirmPassword.hasError('required')">
                 Please Confirm password</span
@@ -87,7 +93,9 @@
               class="form-control error-block"
               formControlName="mobile"
             />
-            <span *ngIf="!mobile.valid && mobile.touched" class="error-block"
+            <span
+              *ngIf="!mobile.valid && (mobile.touched || userSubmitted)"
+              class="error-block"
               >Please Provide mobile</span
             >
           </div>

@@ -13,6 +13,8 @@ import { AddPropertyComponent } from './property/add-property/add-property.compo
 import { PropertyDetailComponent } from './property/property-detail/property-detail.component';
 import { UserLoginComponent } from './Users/user-login/user-login.component';
 import { UserRegisterComponent } from './Users/user-register/user-register.component';
+import { UserServiceService } from './service/user-service.service';
+import { AlertyfyService } from './service/alertyfy.service';
 
 const appRoutes: Routes = [
   { path: 'add-property', component: AddPropertyComponent },
@@ -42,7 +44,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [HousingService],
+  providers: [HousingService, UserServiceService, AlertyfyService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

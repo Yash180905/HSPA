@@ -6,6 +6,9 @@ import {
   ValidationErrors,
   Validators,
 } from '@angular/forms';
+import { User } from 'src/app/model/user';
+import { UserServiceService } from 'src/app/service/user-service.service';
+import { AlertyfyService } from 'src/app/service/alertyfy.service';
 
 @Component({
   selector: 'app-user-register',
@@ -14,7 +17,12 @@ import {
 })
 export class UserRegisterComponent implements OnInit {
   registerationForm!: FormGroup;
-  constructor() {}
+  user!: User;
+  userSubmitted!: boolean;
+  constructor(
+    private userService: UserServiceService,
+    private alertify: AlertyfyService
+  ) {}
 
   ngOnInit() {
     this.registerationForm = new FormGroup(
@@ -56,6 +64,24 @@ export class UserRegisterComponent implements OnInit {
     return this.registerationForm.get('mobile') as FormControl;
   }
   onSubmit() {
-    console.log(this.registerationForm);
+    this.userSubmitted = true;
+    if (this.registerationForm.valid) {
+      // this.user = Object.assign(this.user, this.registerationForm.value);
+      localStorage.setItem('Users', JSON.stringify(this.user));
+      this.userService.addUser(this.userData());
+      this.registerationForm.reset();
+      this.userSubmitted = false;
+      this.alertify.success('sucessful submitted your form');
+    } else {
+      this.alertify.error('kindelly provide the required field');
+    }
+  }
+  userData(): User {
+    return (this.user = {
+      userName: this.userName.value,
+      email: this.email.value,
+      password: this.password.value,
+      mobile: this.mobile.value,
+    });
   }
 }
