@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 import { AppComponent } from './app.component';
 import { PropertyCardComponent } from './property/property-card/property-card.component';
@@ -22,6 +23,7 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { PropertyDetailResolverService } from './service/propertyDetailResolver.service';
 
 const appRoutes: Routes = [
   { path: 'add-property', component: AddPropertyComponent },
@@ -29,7 +31,12 @@ const appRoutes: Routes = [
   { path: 'rent-property', component: PropertyListComponent },
   { path: 'user/login', component: UserLoginComponent },
   { path: 'user/register', component: UserRegisterComponent },
-  { path: 'property-detail/:id', component: PropertyDetailComponent },
+  // { path: 'property-detail/:id', component: PropertyDetailComponent },
+  {
+    path: 'property-detail/:id',
+    component: PropertyDetailComponent,
+    resolve: { prp: PropertyDetailResolverService },
+  },
   { path: '**', component: PropertyListComponent },
 ];
 
@@ -55,8 +62,15 @@ const appRoutes: Routes = [
     TabsModule.forRoot(),
     ButtonsModule.forRoot(),
     BsDatepickerModule.forRoot(),
+    NgxGalleryModule,
   ],
-  providers: [HousingService, UserServiceService, AlertyfyService, AuthService],
+  providers: [
+    HousingService,
+    UserServiceService,
+    AlertyfyService,
+    AuthService,
+    PropertyDetailResolverService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
