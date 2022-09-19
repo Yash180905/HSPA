@@ -24,6 +24,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { PropertyDetailResolverService } from './service/propertyDetailResolver.service';
+import { FilterPipe } from './Pipes/filter.pipe';
+import { SortPipe } from './Pipes/sort.pipe';
 
 const appRoutes: Routes = [
   { path: 'add-property', component: AddPropertyComponent },
@@ -50,6 +52,8 @@ const appRoutes: Routes = [
     NavBarComponent,
     UserLoginComponent,
     UserRegisterComponent,
+    FilterPipe,
+    SortPipe,
   ],
   imports: [
     BrowserModule,
